@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 const redisClient = createClient({
-	url: process.env.REDIS_URL
+	host: process.env.HOST,
+	port: process.env.REDIS_PORT
 });
 
 redisClient.on('error', (err) => console.error(`REDIS_ERROR ===== ${JSON.stringify(err)}`));
